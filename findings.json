@@ -1,0 +1,95 @@
+{
+  "web3": [
+    {
+      "date": "2026-05-08",
+      "severity": "medium",
+      "protocol": "Revert Finance — StableSwap Hooks",
+      "title": "Exact-input swaps can zero output reserves and permanently brick pool math",
+      "class": "DoS / missing reserve check",
+      "platform": "Cantina",
+      "status": "confirmed",
+      "report": "findings/web3/2026-05-revert-stableswap-zero-reserve.md"
+    },
+    {
+      "date": "2026-05-07",
+      "severity": "high",
+      "protocol": "Revert Finance — StableSwap Hooks",
+      "title": "Native ETH `removeLiquidity` reentrancy allows swaps against stale reserves and profitable LP fund extraction",
+      "class": "Reentrancy / stale reserves",
+      "platform": "Cantina",
+      "status": "confirmed",
+      "report": "findings/web3/2026-05-revert-stableswap-native-eth-reentrancy.md"
+    },
+    {
+      "date": "2025-12-05",
+      "severity": "high",
+      "protocol": "SukukFi",
+      "title": "Vaults can burn user shares without user approval after self-allowance is set",
+      "class": "Access control / allowance",
+      "platform": "Code4rena",
+      "status": "confirmed",
+      "report": "findings/web3/2025-12-sukukfi-vault-burn-self-allowance.md"
+    },
+    {
+      "date": "2026-04-30",
+      "severity": "medium",
+      "protocol": "K2",
+      "title": "`execute_liquidation` allows stale prepared liquidations to seize collateral after the collateral reserve is paused",
+      "class": "Missing pause check",
+      "platform": "Code4rena",
+      "status": "confirmed",
+      "report": "findings/web3/2026-04-k2-stale-liquidation-paused-reserve.md"
+    },
+    {
+      "date": "2026-03-31",
+      "severity": "medium",
+      "protocol": "Chainlink Payment Abstraction V2",
+      "title": "Partially fillable CoW orders become permanently unfillable after the first partial execution",
+      "class": "DoS / ERC-1271 order validation",
+      "platform": "Code4rena",
+      "status": "confirmed",
+      "report": "findings/web3/2026-03-chainlink-pa-v2-cow-partial-fill.md"
+    },
+    {
+      "date": "2026-03-13",
+      "severity": "medium",
+      "protocol": "Current (Sui)",
+      "title": "Deposit cap can be bypassed because `deposit_limit_breached()` subtracts `cash_reserve` twice",
+      "class": "Accounting / cap bypass",
+      "platform": "Sherlock",
+      "report": "findings/web3/2026-03-current-sui-deposit-cap-bypass.md"
+    },
+    {
+      "date": "2026-10-02",
+      "severity": "critical",
+      "protocol": "Zendex",
+      "title": "Join circuit omits nullifier distinctness, allowing one note to fund both sides of a join",
+      "class": "ZK circuit / double spend",
+      "platform": "HackenProof",
+      "status": "confirmed",
+      "report": "findings/web3/zendex-join-nullifier-distinctness.md"
+    }
+  ],
+  "web2": [
+    {
+      "date": "2026-10-02",
+      "severity": "high",
+      "target": "Thelia v2.6.1",
+      "title": "Path traversal in `item_name` plus PHP string-literal breakout in the translation editor lets an admin write executable PHP to web-accessible paths (RCE)",
+      "class": "RCE / path traversal + PHP code injection",
+      "cve": "CVE-2026-103535",
+      "status": "disclosed",
+      "report": ""
+    },
+    {
+      "date": "2026-10-02",
+      "severity": "high",
+      "target": "Thelia v2.6.1",
+      "title": "`checkTemplate()` fails open for absolute paths, letting an authorized user load arbitrary files as Smarty templates (SSTI to code execution)",
+      "class": "SSTI / template path validation",
+      "cve": "CVE-2026-103537",
+      "status": "disclosed",
+      "report": ""
+    }
+  ]
+}
