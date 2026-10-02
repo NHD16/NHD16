@@ -57,6 +57,7 @@
       "title": "Deposit cap can be bypassed because `deposit_limit_breached()` subtracts `cash_reserve` twice",
       "class": "Accounting / cap bypass",
       "platform": "Sherlock",
+      "status": "confirmed",
       "report": "findings/web3/2026-03-current-sui-deposit-cap-bypass.md"
     },
     {
