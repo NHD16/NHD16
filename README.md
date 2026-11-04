@@ -23,11 +23,11 @@ $ ./loot --summary
 │ SEVERITY │ WEB3 │ WEB2 │ TOTAL │
 ├──────────┼──────┼──────┼───────┤
 │ CRITICAL │    1 │    0 │     1 │
-│ HIGH     │    2 │    2 │     4 │
+│ HIGH     │    5 │    2 │     7 │
 │ MEDIUM   │    4 │    0 │     4 │
 │ LOW      │    0 │    0 │     0 │
 ├──────────┼──────┼──────┼───────┤
-│ TOTAL    │    7 │    2 │     9 │
+│ TOTAL    │   10 │    2 │    12 │
 └──────────┴──────┴──────┴───────┘
 ```
 <!-- STATS:END -->
@@ -42,6 +42,9 @@ nhd16@kali:~/loot$ ls -t web3/
 | ID | Severity | Protocol | Finding | Class | Platform | Status | Report |
 |---|---|---|---|---|---|---|---|
 | `W3-007` | 🟥 `CRITICAL` | Zendex | Join circuit omits nullifier distinctness, allowing one note to fund both sides of a join | ZK circuit / double spend | HackenProof | ☑️ confirmed | [`read →`](findings/web3/zendex-join-nullifier-distinctness.md) |
+| `W3-008` | 🟧 `HIGH` | Rain — USDR | Collateral deposited for one transaction unlocks the whole PSM reserve, including the escrow held back for losses | Solvency accounting / flash collateral | HackenProof | ☑️ confirmed | [`read →`](findings/web3/2026-09-rain-usdr-psm-escrow-bypass.md) |
+| `W3-009` | 🟧 `HIGH` | Rain — USDR | `worstCaseLoss()` drops liquidated debt: `bark` clears a solvency breach, and realized bad debt counts as zero loss | Solvency accounting / liquidation | HackenProof | ☑️ confirmed | [`read →`](findings/web3/2026-09-rain-usdr-bark-clears-solvency-breach.md) |
+| `W3-010` | 🟧 `HIGH` | Rain — USDR | Fee-exempt stable ilks accept non-PSM debt: permanent PSM redemption freeze and permanent `distributeSurplus` revert | Accounting desync / reserve ledger | HackenProof | ☑️ confirmed | [`read →`](findings/web3/2026-09-rain-usdr-stable-ilk-non-psm-debt.md) |
 | `W3-001` | 🟨 `MEDIUM` | Revert Finance — StableSwap Hooks | Exact-input swaps can zero output reserves and permanently brick pool math | DoS / missing reserve check | Cantina | ☑️ confirmed | [`read →`](findings/web3/2026-05-revert-stableswap-zero-reserve.md) |
 | `W3-002` | 🟧 `HIGH` | Revert Finance — StableSwap Hooks | Native ETH `removeLiquidity` reentrancy allows swaps against stale reserves and profitable LP fund extraction | Reentrancy / stale reserves | Cantina | ☑️ confirmed | [`read →`](findings/web3/2026-05-revert-stableswap-native-eth-reentrancy.md) |
 | `W3-004` | 🟨 `MEDIUM` | K2 | `execute_liquidation` allows stale prepared liquidations to seize collateral after the collateral reserve is paused | Missing pause check | Code4rena | ☑️ confirmed | [`read →`](findings/web3/2026-04-k2-stale-liquidation-paused-reserve.md) |

@@ -69,6 +69,36 @@
       "platform": "HackenProof",
       "status": "confirmed",
       "report": "findings/web3/zendex-join-nullifier-distinctness.md"
+    },
+    {
+      "date": "2026-09-29",
+      "severity": "high",
+      "protocol": "Rain — USDR",
+      "title": "Collateral deposited for one transaction unlocks the whole PSM reserve, including the escrow held back for losses",
+      "class": "Solvency accounting / flash collateral",
+      "platform": "HackenProof",
+      "status": "confirmed",
+      "report": "findings/web3/2026-09-rain-usdr-psm-escrow-bypass.md"
+    },
+    {
+      "date": "2026-09-29",
+      "severity": "high",
+      "protocol": "Rain — USDR",
+      "title": "`worstCaseLoss()` drops liquidated debt: `bark` clears a solvency breach, and realized bad debt counts as zero loss",
+      "class": "Solvency accounting / liquidation",
+      "platform": "HackenProof",
+      "status": "confirmed",
+      "report": "findings/web3/2026-09-rain-usdr-bark-clears-solvency-breach.md"
+    },
+    {
+      "date": "2026-09-25",
+      "severity": "high",
+      "protocol": "Rain — USDR",
+      "title": "Fee-exempt stable ilks accept non-PSM debt: permanent PSM redemption freeze and permanent `distributeSurplus` revert",
+      "class": "Accounting desync / reserve ledger",
+      "platform": "HackenProof",
+      "status": "confirmed",
+      "report": "findings/web3/2026-09-rain-usdr-stable-ilk-non-psm-debt.md"
     }
   ],
   "web2": [
