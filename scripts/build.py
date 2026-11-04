@@ -20,16 +20,6 @@ SEV_LABEL = {
     "low": "🟦 `LOW`",
     "info": "⬜ `INFO`",
 }
-STATUS_LABEL = {
-    "fixed": "✅ fixed",
-    "confirmed": "☑️ confirmed",
-    "triaged": "⏳ triaged",
-    "duplicate": "♻️ duplicate",
-    "disclosed": "📢 disclosed",
-    "private": "🔒 private",
-}
-
-
 def cell(value):
     """Escape a value so it cannot break a markdown table row."""
     return str(value or "—").replace("|", "\\|").replace("\n", " ")
@@ -72,12 +62,11 @@ def web3_table(items):
             cell(it["title"]),
             cell(it.get("class")),
             cell(it.get("platform")),
-            STATUS_LABEL.get(it.get("status"), cell(it.get("status"))),
             link(it),
         ]
         for fid, it in with_ids(items, "W3")
     ]
-    header = ["ID", "Severity", "Protocol", "Finding", "Class", "Platform", "Status", "Report"]
+    header = ["ID", "Severity", "Protocol", "Finding", "Class", "Platform", "Report"]
     return table(header, rows, "no findings disclosed yet")
 
 
@@ -103,12 +92,11 @@ def web2_table(items):
             cell(it["title"]),
             cell(it.get("class")),
             web2_ref(it),
-            STATUS_LABEL.get(it.get("status"), cell(it.get("status"))),
             link(it),
         ]
         for fid, it in with_ids(items, "W2")
     ]
-    header = ["ID", "Severity", "Target", "Finding", "Class", "CVE / Platform", "Status", "Report"]
+    header = ["ID", "Severity", "Target", "Finding", "Class", "CVE / Platform", "Report"]
     return table(header, rows, "no findings disclosed yet")
 
 
